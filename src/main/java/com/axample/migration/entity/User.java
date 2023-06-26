@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -36,4 +37,8 @@ public class User {
     @NotBlank
     @Size(min = 1, max = 100)
     private String lastName;
+
+    @NotBlank
+    @Email
+    private String email;
 }
