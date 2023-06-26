@@ -1,7 +1,11 @@
 package com.axample.migration.entity;
 
+import com.axample.migration.enums.Role;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -41,4 +45,8 @@ public class User {
     @NotBlank
     @Email
     private String email;
+
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
