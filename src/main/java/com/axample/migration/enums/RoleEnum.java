@@ -1,5 +1,5 @@
 package com.axample.migration.enums;
 
-public enum Role {
+public enum RoleEnum {
     USER, ADMIN;
 }

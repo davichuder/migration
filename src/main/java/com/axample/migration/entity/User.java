@@ -1,6 +1,6 @@
 package com.axample.migration.entity;
 
-import com.axample.migration.enums.Role;
+import com.axample.migration.enums.RoleEnum;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +9,8 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
@@ -46,7 +48,7 @@ public class User {
     @Email
     private String email;
 
-    @NotNull
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 }

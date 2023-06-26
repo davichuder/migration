@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS roles (
+  id BIGINT NOT NULL AUTO_INCREMENT,
+  user_role VARCHAR(20) NOT NULL,
+  PRIMARY KEY (id),
+  UNIQUE KEY uk_user_role (user_role)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO roles (user_role)
+VALUES ('USER'), ('ADMIN');
+
+ALTER TABLE users
+DROP COLUMN role;
